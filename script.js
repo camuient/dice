@@ -1,23 +1,18 @@
 document.getElementById('roll-button').addEventListener('click', function() {
     var dice = document.getElementById('dice');
-    // サイコロを回転させる初期設定
-    dice.style.transition = 'transform 3s ease-out';
 
-    // 3秒後にサイコロが特定の面で停止するようにする
-    setTimeout(function() {
-        // サイコロの各面が上を向く回転角度の例
-        var rotations = [
-            'rotateX(0deg) rotateY(0deg)', // 1の面が上
-            'rotateX(180deg) rotateY(0deg)', // 6の面が上
-            'rotateX(90deg) rotateY(0deg)', // 2の面が上
-            'rotateX(-90deg) rotateY(0deg)', // 5の面が上
-            'rotateX(0deg) rotateY(90deg)', // 3の面が上
-            'rotateX(0deg) rotateY(-90deg)' // 4の面が上
-        ];
+    // X軸で5回以上回転させるための角度を計算（1800度は5回転）
+    var xRotation = 1800 + getRandomInt(0, 5) * 90; // X軸の追加回転を加える
 
-        // ランダムに選ばれた回転角度でサイコロを停止
-        var randomRotation = rotations[Math.floor(Math.random() * rotations.length)];
-        dice.style.transition = 'transform 0.5s ease-out'; // 停止時の滑らかな遷移
-        dice.style.transform = randomRotation;
-    }, 3000); // 3秒後に実行
+    // Y軸は常に同じ角度（0度、90度、180度、270度）のいずれかで停止させ、サイコロが正面を向くようにする
+    var yRotation = getRandomInt(0, 3) * 90; // Y軸の回転を設定
+
+    dice.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
 });
+
+// 最小値と最大値の間でランダムな整数を取得する関数
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

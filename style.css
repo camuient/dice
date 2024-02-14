@@ -61,27 +61,5 @@ body {
 
 
 button {
-    background: none;
-	border: none;
-	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    margin-top: 20px;
 }
-
-button.btn--orange {
-    color: #fff;
-    background-color: #eb6100;
-    border-bottom: 5px solid #b84c00;
-  }
-button.btn--orange:hover {
-    margin-top: 3px;
-    color: #fff;
-    background: #f56500;
-    border-bottom: 2px solid #b84c00;
-}
-button.btn--shadow {
-    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-}
-
