@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>サイコロアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dice-container">
+        <div id="dice">
+            <div class="side front"><span class="dot center"></span></div> <!-- 1の目、初期表示をここに設定 -->
+            <div class="side top">
+                <span class="dot top-left"></span>
+                <span class="dot bottom-right"></span>
+            </div> <!-- 2の目 -->
+            <div class="side right">
+                <span class="dot top-left"></span>
+                <span class="dot center"></span>
+                <span class="dot bottom-right"></span>
+            </div> <!-- 3の目 -->
+            <div class="side left">
+                <span class="dot top-left"></span>
+                <span class="dot top-right"></span>
+                <span class="dot bottom-left"></span>
+                <span class="dot bottom-right"></span>
+            </div> <!-- 4の目 -->
+            <div class="side bottom">
+                <span class="dot top-left"></span>
+                <span class="dot top-right"></span>
+                <span class="dot center"></span>
+                <span class="dot bottom-left"></span>
+                <span class="dot bottom-right"></span>
+            </div> <!-- 5の目 -->
+            <div class="side back">
+                <span class="dot top-left"></span>
+                <span class="dot top-right"></span>
+                <span class="dot middle-left"></span>
+                <span class="dot middle-right"></span>
+                <span class="dot bottom-left"></span>
+                <span class="dot bottom-right"></span>
+            </div> <!-- 6の目 -->
+        </div>
+    </div>
+    <button id="roll-button" class="btn btn--orange btn--radius btn--cubic btn--shadow">サイコロをふる<br>Roll the dice</button>
+    <script src="script.js"></script>
+</body>
+</html>

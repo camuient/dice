@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#dice-container {
+    perspective: 1000px;
+    height: 200px;
+}
+
+#dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 2.5s;
+}
+
+.side {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: solid 1px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.front  { transform: rotateY(0deg) translateZ(50px); }
+.back   { transform: rotateX(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+}
+
+.center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.top-left { top: 15%; left: 15%; }
+.top-right { top: 15%; right: 15%; }
+.bottom-left { bottom: 15%; left: 15%; }
+.bottom-right { bottom: 15%; right: 15%; }
+.middle-left { left: 15%; top: 50%; transform: translateY(-50%); }
+.middle-right { right: 15%; top: 50%; transform: translateY(-50%); }
+
+.side.front .dot {
+    background-color: red; /* 赤色に設定 */
+}
+
+
+button {
+    background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+button.btn--orange {
+    color: #fff;
+    background-color: #eb6100;
+    border-bottom: 5px solid #b84c00;
+  }
+button.btn--orange:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #f56500;
+    border-bottom: 2px solid #b84c00;
+}
+button.btn--shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
